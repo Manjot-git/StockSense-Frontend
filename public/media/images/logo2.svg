@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="260"
+ viewBox="8 45 235 20">
+  <!-- Line Chart Polyline -->
+  <polyline points="0,80 25,50 45,65 65,30"
+            fill="none"
+            stroke="#3B88D3"
+            stroke-width="4"/>
+  
+  <!-- Arrowhead -->
+  <polygon points="63,30 60,38 70"
+           fill="#3B88D3"/>
+
+  <!-- Dollar Circle -->
+  <circle cx="42" cy="65" r="13"
+          fill="#A3D4F7"
+          stroke="#3B88D3"
+          stroke-width="3"/>
+  
+  <!-- Dollar Text -->
+  <text x="42" y="70"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="15"
+        fill="#3B88D3"
+        font-weight="bold">$</text>
+  
+  <!-- Brand Text -->
+  <text x="68" y="70"
+        font-family="Georgia, serif"
+        font-size="30"
+        fill="#3B88D3"
+        font-weight="bold">StockSense</text>
+</svg>
