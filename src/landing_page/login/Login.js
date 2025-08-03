@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import axios from "../../utils/axios.js"; // axiosInstance with withCredentials
+import axios from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
-import './Signup.css';
+import '../signup/Signup.css';
 
-const Signup = () => {
+
+const Login = () => {
   const [formData, setFormData] = useState({
     username: "",
-    password: "",
-    email: ""
+    password: ""
   });
 
   const navigate = useNavigate();
@@ -19,26 +19,27 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/user/signup", formData); // /user from backend route
-      setFormData({ username: "", email: "", password: "" }); // Clear form
+      await axios.post("/user/login", formData);
+      setFormData({ username: "", password: "" }); // Clear form
       window.location.replace("http://localhost:3001"); // dashboard
     } catch (err) {
-      console.error(err.response?.data?.message || "Signup failed");
+      console.error(err.response?.data?.message || "Login failed");
     }
   };
 
   return (
     <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
-        <h2>Sign Up</h2>
-        <p className="sub-heading">To access the StockSense Dashboard</p>
+        <h2>Log In</h2>
+        <p className="sub-heading">Welcome back to the StockSense Dashboard</p>
+
         <input name="username" placeholder="Username" onChange={handleChange} required />
-        <input name="email" placeholder="Email" onChange={handleChange} required />
         <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Log In</button>
         </form>
     </div>
+
   );
 };
 
-export default Signup;
+export default Login;

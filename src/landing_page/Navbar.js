@@ -7,7 +7,7 @@ function Navbar() {
       class="navbar navbar-expand-lg border-bottom"
       style={{ backgroundColor: "#FFF" }}
     >
-      <div class="container px-3 " style={{ marginBottom: "-10px" }}>
+      <div className="container px-3 " style={{ marginBottom: "-10px" }}>
         <Link class="navbar-brand" to="/">
           <img
             src="media/images/logo2.svg"
@@ -32,6 +32,11 @@ function Navbar() {
               <li class="nav-item">
                 <Link class="nav-link active" aria-current="page" to="/signup">
                   Signup
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link active" aria-current="page" to="/login">
+                  Login
                 </Link>
               </li>
               <li class="nav-item">
