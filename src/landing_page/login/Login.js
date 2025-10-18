@@ -21,7 +21,12 @@ const Login = () => {
     try {
       await axios.post("/user/login", formData);
       setFormData({ username: "", password: "" }); // Clear form
-      window.location.replace("http://localhost:3001"); // dashboard
+      const dashboardURL =
+      window.location.hostname === "localhost"
+        ? "http://localhost:3001"
+        : "https://stock-sense-dashboard.vercel.app";
+
+      window.location.replace(dashboardURL);// dashboard
     } catch (err) {
       console.error(err.response?.data?.message || "Login failed");
     }
